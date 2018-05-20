@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.eatstreet.com/publicapi/v1/restaurant';
 
 export const FETCH_RESTAURANT = 'FETCH_RESTAURANT';
 
-export function fetchRestaurant(city = 'San Francisco') {
+export function fetchRestaurant(city = 'Seattle') {
 
   const url = `${BASE_URL}/search?access-token=${ACCESS_KEY}&method=both&street-address=${city}`;
   const request = axios.get(url);
