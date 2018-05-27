@@ -78,11 +78,9 @@ class RestaurantList extends Component {
 }
 
 function mapStateToProps(state) {
-
   return {
     restaurants: state.restaurants
   };
-
 }
 
 // function mapDispatchToProps(dispatch) {

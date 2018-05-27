@@ -1,5 +1,6 @@
 import { FETCH_RESTAURANT } from '../actions/index';
-import { FETCH_LOCATION } from '../actions/index';
+import { FETCH_RESTAURANT_DETAILS } from '../actions/index';
+
 
 export default function (state = [], action) {
 
@@ -7,6 +8,11 @@ export default function (state = [], action) {
     case FETCH_RESTAURANT:
       state = [];
       return [ ...action.payload.data.restaurants, ...state ];
+
+    case FETCH_RESTAURANT_DETAILS:
+      const newState = [ ...state ];
+      newState[0] = action.payload.data.restaurant;
+      return newState;
   }
 
   return state;
