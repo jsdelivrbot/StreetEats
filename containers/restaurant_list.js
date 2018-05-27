@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import { fetchRestaurant } from '../actions/index';
 import SearchBar from './search_bar';
 
@@ -30,6 +31,7 @@ class RestaurantList extends Component {
         <li
           key={restaurant.apiKey}
           className="list-group-item">
+          <Link to={`/restaurant/details/${restaurant.apiKey}`} >
             <div className="media">
 
               <div className="media-left">
@@ -43,7 +45,8 @@ class RestaurantList extends Component {
                 <br />
                 {restaurant.phone}
               </div>
-          </div>
+            </div>
+          </Link>
         </li>
       );
 
